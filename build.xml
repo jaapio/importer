@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~  Polder Knowledge /  ${PROJECT_NAME} (https://polderknowledge.com)
+  ~
+  ~ @link https://github.com/polderknowledge/${PROJECT_NAME} for the canonical source repository
+  ~ @copyright Copyright (c) 2017 Polder Knowledge (https://polderknowledge.com)
+  ~ @license https://github.com/polderknowledge/authentication/blob/master/LICENSE.md MIT
+  -->
+
+<project name="polderknowledge/importer" default="build" basedir=".">
+    <import file="vendor/polderknowledge/build-tools/common.xml" />
+</project>

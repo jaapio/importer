@@ -10,6 +10,7 @@
 namespace PolderKnowledge\Importer;
 
 use PolderKnowledge\Importer\Reader\Reader;
+use PolderKnowledge\Importer\Step\Step;
 use PolderKnowledge\Importer\Writer\Writer;
 
 final class Importer
@@ -28,6 +29,13 @@ final class Importer
     {
         $this->reader = $reader;
         $this->writer = $writer;
+        $this->steps = new \SplPriorityQueue();
+    }
+
+    public function addStep(Step $step)
+    {
+        $step->attach($this->reader);
+        $this->reader = $step;
     }
 
     public function execute()

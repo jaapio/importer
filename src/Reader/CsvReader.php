@@ -9,34 +9,27 @@
 
 namespace PolderKnowledge\Importer\Reader;
 
+use Generator;
+use League\Csv\Reader as LeagueReader;
 
 final class CsvReader implements Reader
 {
-    /**
-     * @var \League\Csv\Reader
-     */
+    /** @var LeagueReader */
     private $reader;
 
-    private function __construct(\League\Csv\Reader $reader)
+    private function __construct(LeagueReader $reader)
     {
         $this->reader = $reader;
     }
 
-    /**
-     * @param string $path
-     * @return static
-     */
-    public static function createFromPath($path)
+    public static function createFromPath(string $path): CsvReader
     {
-        return new static(\League\Csv\Reader::createFromPath($path));
+        return new static(LeagueReader::createFromPath($path));
     }
 
-    /**
-     * @return \Generator
-     */
-    public function fetch()
+    public function fetch(): Generator
     {
-        foreach ( $this->reader->fetch() as $line) {
+        foreach ($this->reader as $line) {
             yield $line;
         }
     }

@@ -9,11 +9,12 @@
     "license": "MIT",
     "homepage": "https://polderknowledge.com",
     "require": {
-        "php": "~5.5|~7.0"
+        "php": "^7.0",
+        "league/csv": "^9.2"
     },
     "require-dev": {
         "doctrine/dbal": "^2.5",
-        "league/csv": "^8.2",
+        "phpunit/phpunit": "^6.5",
         "polderknowledge/build-tools": "^2.0"
     },
     "autoload": {

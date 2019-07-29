@@ -9,13 +9,14 @@
 
 namespace PolderKnowledge\ImporterTest;
 
+use PHPUnit\Framework\TestCase;
 use PolderKnowledge\Importer\Reader\CsvReader;
 
-class CsvReaderTest extends \PHPUnit_Framework_TestCase
+class CsvReaderTest extends TestCase
 {
     public function testFetch()
     {
-        $reader = CsvReader::createFromPath(__DIR__ . '/../../assets/simple.csv');
+        $reader = CsvReader::createFromPath(__DIR__ . '/../../../assets/simple.csv');
 
         $result = [];
         foreach ($reader->fetch() as $line) {

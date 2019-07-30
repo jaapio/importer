@@ -27,6 +27,16 @@ final class CsvReader implements Reader
         return new static(LeagueReader::createFromPath($path));
     }
 
+    public function setHeaderOffset(int $offset)
+    {
+        $this->reader->setHeaderOffset($offset);
+    }
+
+    public function setDelimiter(string $delimiter)
+    {
+        $this->reader->setDelimiter($delimiter);
+    }
+
     public function fetch(): Generator
     {
         foreach ($this->reader as $line) {
